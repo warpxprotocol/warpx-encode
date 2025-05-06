@@ -61,9 +61,9 @@ export default function OrderSummary({
       </div>
       <div className="flex justify-between text-xs text-gray-400 mt-2">
         <span>Quantity</span>
-        {/* <span className="text-white font-medium">
+        <span className="text-white font-medium">
           {qty.toLocaleString(undefined, { maximumFractionDigits: decimals })} {baseToken}
-        </span> */}
+        </span>
       </div>
       <div className="flex justify-between text-xs text-gray-400 mt-2">
         <span>Order Value</span>
