@@ -16,6 +16,16 @@ To ensure optimal performance and scalability, we're planning to implement **NOM
 
 _warp(x)_ represents a significant leap forward in decentralized trading technology, combining privacy, efficiency, and scalability in a single, powerful platform. Our solution addresses the growing need for private, efficient, and scalable trading solutions in the rapidly evolving DeFi landscape.
 
+# Team Members
+
+- **Raf** [Github](https://github.com/cocoyoon) | [LinkedIn](https://www.linkedin.com/in/소윤-정-066165179/)
+
+  - Roles: Runtime Development, Planning
+  - Focused on designing and implementing the core runtime and overall project planning.
+
+- **Kiyori** [Github](https://github.com/thxforall) | [LinkedIn]()
+  - Roles: Frontend Development, Design
+
 # Demo Video
 
 [Youtube Link]()
