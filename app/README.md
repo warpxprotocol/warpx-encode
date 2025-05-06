@@ -34,7 +34,7 @@ cd packages/sdk
 
 ```bash
 ./target/release/warpx-node \
-  --rpc-port 9945 \
+  --rpc-port 9988 \
   ...
 ```
 
@@ -43,7 +43,7 @@ cd packages/sdk
 ```bash
 curl -H "Content-Type: application/json" \
      -d '{"id":"1", "jsonrpc":"2.0", "method": "state_getMetadata", "params":[]}' \
-     http://localhost:9945 > ./warpx.json
+     http://localhost:9988 > ./warpx.json
 ```
 
 4. Generate type definitions:
@@ -95,5 +95,5 @@ You can add screenshots of key features here:
 
 ## 🙌 Contributors
 - **Frontend**: [Kiyori (GitHub: @thxforall)](https://github.com/thxforall)
-- 
+  
 ---
