@@ -73,13 +73,11 @@ This will generate the required custom types for the frontend to work with the P
 
 ---
 
-## 📸 Screenshots (Optional)
+## 📸 Screenshots
 
-You can add screenshots of key features here:
-
-![Orderbook View](./screenshots/orderbook.png)
-![Wallet Connection](./screenshots/wallet-connect.png)
-![Trade Modal](./screenshots/trade-modal.png)
+![Orderbook View](./packages/frontend/screenshots/orderbook.jpg)
+![Extrinsic Toast](./packages/frontend/screenshots/extrinsicToast.png)
+![Create Pool](./packages/frontend/screenshots/createPool.jpg)
 
 
 ---
