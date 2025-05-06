@@ -1,2 +1,3 @@
-# warpx-encode
-Project Submission for Encode Polkadot Hackathon 
+# Project warp(x)
+
+Project Submission for Encode Polkadot Hackathon
