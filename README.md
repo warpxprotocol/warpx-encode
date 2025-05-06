@@ -135,7 +135,7 @@ _warp(x)_ represents a significant leap forward in decentralized trading technol
 
 ### Runtime Details
 
-#### 1. Hybrid Orderbook System
+#### 1. [Hybrid Orderbook](https://github.com/warpxprotocol/warpx/tree/main/pallets/hybrid-orderbook)
 
 ![hybrid-orderbook](./assets/hybrid-orderbook.png)
 
@@ -169,7 +169,9 @@ _warp(x)_ represents a significant leap forward in decentralized trading technol
   - Maximum swap amount optimization
   - Slippage protection through price impact calculation
 
-#### 2. Private Transaction System
+#### 2. [Private Transaction System](https://github.com/warpxprotocol/warpx/tree/feat/shielded-pool)
+
+_Private Transaction System is under development on branch [`feat/shielded-pool`](https://github.com/warpxprotocol/warpx/tree/feat/shielded-pool). We're facing the same [issue](https://github.com/risc0/risc0/issues/2514) with risc-0 and Substrate integration. Planning to fix this after the hackathon. That is why we decided to create demo of [`private-tx-demo`](./private-tx-demo/private-tx/)_ separately.
 
 _warp(x)_ will implement a sophisticated privacy-preserving architecture that focuses on protecting trader identities while maintaining transparent market operations:
 
