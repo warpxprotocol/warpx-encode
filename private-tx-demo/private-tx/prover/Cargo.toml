@@ -1,0 +1,11 @@
+[package]
+name = "prover"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+risc0-zkvm = { workspace = true }
+tracing-subscriber = { workspace = true }
+serde = { workspace = true }
+methods = { path = "methods" }
+host = { path = "host" }

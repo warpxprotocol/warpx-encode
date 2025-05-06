@@ -1,0 +1,18 @@
+[package]
+name = "host"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+methods = { path = "../methods" }
+risc0-zkvm = { workspace = true }
+tracing-subscriber = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+clap = { workspace = true }
+serde_json = { workspace = true }
+ciborium = { workspace = true }
+bytemuck = { workspace = true   }
+
+
+[[bin]]
+name = "host"
