@@ -1,111 +1,109 @@
-# RISC Zero Rust Starter Template
+# Private Transaction Demo
 
-Welcome to the RISC Zero Rust Starter Template! This template is intended to
-give you a starting point for building a project using the RISC Zero zkVM.
-Throughout the template (including in this README), you'll find comments
-labelled `TODO` in places where you'll need to make changes. To better
-understand the concepts behind this template, check out the [zkVM
-Overview][zkvm-overview].
+## Project Overview
 
-## Quick Start
+The RISC Zero Rust Starter Template provides a foundation for building projects using the RISC Zero zkVM. This template includes the basic structure and configuration needed to implement Zero-Knowledge Proofs.
 
-First, make sure [rustup] is installed. The
-[`rust-toolchain.toml`][rust-toolchain] file will be used by `cargo` to
-automatically install the correct version.
+## Project Structure
 
-To build all methods and execute the method within the zkVM, run the following
-command:
+```
+project_name
+├── Cargo.toml                # Main project configuration file
+├── Cargo.lock                # Dependency lock file
+├── rust-toolchain.toml       # Rust toolchain version management
+├── src/                      # Source code directory
+├── prover/                   # Proof generation code
+│   ├── Cargo.toml           # Prover configuration
+│   ├── host/                # Host code directory
+│   │   └── src/            # Host implementation
+│   └── methods/            # Guest code directory
+│       ├── Cargo.toml      # Methods configuration
+│       ├── build.rs        # Build configuration
+│       ├── spend-proof/    # Spend proof guest program
+│       │   └── src/       # Spend proof implementation
+│       └── note-commitment/ # Note commitment guest program
+│           └── src/       # Note commitment implementation
+├── verifier/                 # Proof verification code
+├── target/                   # Build output directory
+├── LICENSE                   # License file
+└── .gitignore               # Git ignore file list
+```
+
+## Key Components
+
+### 1. Source Code (src/)
+
+- Core project logic implementation
+- Main application code
+
+### 2. Proof Generation (prover/)
+
+#### Host Code (prover/host/)
+
+- Code that runs outside the zkVM
+- Manages interaction with guest code
+- Handles proof verification and results
+
+#### Guest Code (prover/methods/)
+
+The methods directory contains two separate guest programs:
+
+1. Spend Proof (prover/methods/spend-proof/)
+
+   - Implements the spend proof generation logic
+   - Verifies transaction spending
+   - Runs inside the zkVM
+
+2. Note Commitment (prover/methods/note-commitment/)
+   - Implements the note commitment proof generation
+   - Handles note commitment verification
+   - Runs inside the zkVM
+
+Both guest programs:
+
+- Execute in the constrained zkVM environment
+- Are built using the build.rs configuration
+- Generate zero-knowledge proofs for their respective operations
+
+### 3. Proof Verification (verifier/)
+
+- Code for verifying generated proofs
+- Proof validity checking logic
+- Verification result processing
+
+## Getting Started
+
+### Prerequisites
+
+- Install [rustup](https://rustup.rs)
+- Rust version specified in `rust-toolchain.toml`
+
+### Build and Run
 
 ```bash
 cargo run
 ```
 
-This is an empty template, and so there is no expected output (until you modify
-the code).
+### Running the Prover
 
-### Executing the Project Locally in Development Mode
+The prover can be executed with different proof types:
 
-During development, faster iteration upon code changes can be achieved by leveraging [dev-mode], we strongly suggest activating it during your early development phase. Furthermore, you might want to get insights into the execution statistics of your project, and this can be achieved by specifying the environment variable `RUST_LOG="[executor]=info"` before running your project.
-
-Put together, the command to run your project in development mode while getting execution statistics is:
+1. Note Commitment Proof
 
 ```bash
-RUST_LOG="[executor]=info" RISC0_DEV_MODE=1 cargo run
+cargo run -- --proof note-commitment --amount 100
 ```
 
-### Running Proofs Remotely on Bonsai
+- Generates a note commitment proof
+- Requires an amount parameter
+- Used for creating new notes
 
-_Note: The Bonsai proving service is still in early Alpha; an API key is
-required for access. [Click here to request access][bonsai access]._
-
-If you have access to the URL and API key to Bonsai you can run your proofs
-remotely. To prove in Bonsai mode, invoke `cargo run` with two additional
-environment variables:
+2. Spend Proof
 
 ```bash
-BONSAI_API_KEY="YOUR_API_KEY" BONSAI_API_URL="BONSAI_URL" cargo run
+cargo run -- --proof spend
 ```
 
-## How to Create a Project Based on This Template
-
-Search this template for the string `TODO`, and make the necessary changes to
-implement the required feature described by the `TODO` comment. Some of these
-changes will be complex, and so we have a number of instructional resources to
-assist you in learning how to write your own code for the RISC Zero zkVM:
-
-- The [RISC Zero Developer Docs][dev-docs] is a great place to get started.
-- Example projects are available in the [examples folder][examples] of
-  [`risc0`][risc0-repo] repository.
-- Reference documentation is available at [https://docs.rs][docs.rs], including
-  [`risc0-zkvm`][risc0-zkvm], [`cargo-risczero`][cargo-risczero],
-  [`risc0-build`][risc0-build], and [others][crates].
-
-## Directory Structure
-
-It is possible to organize the files for these components in various ways.
-However, in this starter template we use a standard directory structure for zkVM
-applications, which we think is a good starting point for your applications.
-
-```text
-project_name
-├── Cargo.toml
-├── host
-│   ├── Cargo.toml
-│   └── src
-│       └── main.rs                    <-- [Host code goes here]
-└── methods
-    ├── Cargo.toml
-    ├── build.rs
-    ├── guest
-    │   ├── Cargo.toml
-    │   └── src
-    │       └── method_name.rs         <-- [Guest code goes here]
-    └── src
-        └── lib.rs
-```
-
-## Video Tutorial
-
-For a walk-through of how to build with this template, check out this [excerpt
-from our workshop at ZK HACK III][zkhack-iii].
-
-## Questions, Feedback, and Collaborations
-
-We'd love to hear from you on [Discord][discord] or [Twitter][twitter].
-
-[bonsai access]: https://bonsai.xyz/apply
-[cargo-risczero]: https://docs.rs/cargo-risczero
-[crates]: https://github.com/risc0/risc0/blob/main/README.md#rust-binaries
-[dev-docs]: https://dev.risczero.com
-[dev-mode]: https://dev.risczero.com/api/generating-proofs/dev-mode
-[discord]: https://discord.gg/risczero
-[docs.rs]: https://docs.rs/releases/search?query=risc0
-[examples]: https://github.com/risc0/risc0/tree/main/examples
-[risc0-build]: https://docs.rs/risc0-build
-[risc0-repo]: https://www.github.com/risc0/risc0
-[risc0-zkvm]: https://docs.rs/risc0-zkvm
-[rust-toolchain]: rust-toolchain.toml
-[rustup]: https://rustup.rs
-[twitter]: https://twitter.com/risczero
-[zkhack-iii]: https://www.youtube.com/watch?v=Yg_BGqj_6lg&list=PLcPzhUaCxlCgig7ofeARMPwQ8vbuD6hC5&index=5
-[zkvm-overview]: https://dev.risczero.com/zkvm
+- Generates a spend proof
+- Verifies the spending of existing notes
+- Used for transaction verification
