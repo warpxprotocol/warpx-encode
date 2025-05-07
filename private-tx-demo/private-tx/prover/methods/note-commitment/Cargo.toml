@@ -4,5 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-risc0-zkvm = { version = "^2.0.1" }
+risc0-zkvm = { workspace = true }
 sha2 = "0.10"
+serde = { workspace = true }
+bincode = "1.3"

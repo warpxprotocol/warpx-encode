@@ -4,15 +4,16 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-methods = { path = "../methods" }
 risc0-zkvm = { workspace = true }
-tracing-subscriber = { workspace = true }
-serde = { workspace = true, features = ["derive"] }
-clap = { workspace = true }
+serde = { workspace = true }
 serde_json = { workspace = true }
 ciborium = { workspace = true }
-bytemuck = { workspace = true   }
-
+tracing-subscriber = { workspace = true }
+bytemuck = { workspace = true }
+clap = { version = "4.4", features = ["derive"] }
+bincode = "1.3"
+methods = { path = "../methods" }
+sha2 = { workspace = true }
 
 [[bin]]
 name = "host"

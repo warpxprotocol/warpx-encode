@@ -58,7 +58,7 @@ fn main() {
 
     // Verify the receipt using risc0-verifier
     match verifier.verify(vk, proof, journal) {
-        Ok(_) => println!("Verification successful!"),
+        Ok(_) => println!("Verification successful for Image Id {:?}!", vk),
         Err(e) => println!("Verification failed: {:?}", e),
     }
 } 

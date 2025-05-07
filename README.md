@@ -1,4 +1,4 @@
-# Project warp(x)
+# warp(x): Privacy-preserving Hybrid Orderbook
 
 ![banner](./assets/warpx-banner.png)
 
@@ -21,7 +21,6 @@ _warp(x)_ represents a significant leap forward in decentralized trading technol
 - **Raf** [Github](https://github.com/cocoyoon) | [LinkedIn](https://www.linkedin.com/in/소윤-정-066165179/)
 
   - Roles: Runtime Development, Planning
-  - Focused on designing and implementing the core runtime and overall project planning.
 
 - **Kiyori** [Github](https://github.com/thxforall)
   - Roles: Frontend Development, Design
@@ -32,9 +31,12 @@ _warp(x)_ represents a significant leap forward in decentralized trading technol
 
 # Application
 
-![Orderbook View](./app/packages/frontend/screenshots/orderbook.jpg)
-![Extrinsic Toast](./app/packages/frontend/screenshots/extrinsicToast.png)
-![Create Pool](./app/packages/frontend/screenshots/createPool.jpg)
+- Orderbook
+  ![Orderbook View](./app/packages/frontend/screenshots/orderbook.jpg)
+- Submit Extrinsic
+  ![Extrinsic Toast](./app/packages/frontend/screenshots/extrinsicToast.png)
+- Create Pool
+  ![Create Pool](./app/packages/frontend/screenshots/createPool.jpg)
 
 # Technical Details
 
@@ -203,7 +205,7 @@ _warp(x)_ will implement a sophisticated privacy-preserving architecture that fo
 - [warpx](https://github.com/warpxprotocol/warpx)
 - [warpx-frontend](https://github.com/warpxprotocol/warpx-frontend)
 
-# Bootstrapping warp(x)
+# Bootstrapping
 
 To interact with `warp(x)-frontend`, `warp(x)`node should be bootstrapped. Following script is the helper script for the process.
 
@@ -273,6 +275,11 @@ python3 test-substrate.py --stress-test \
   --tick-range 10
 ```
 
+# AI Tools
+
+- Cluade
+- Cursor IDE
+
 # Submission Requirements
 
 - [x] **Codebase**
@@ -280,16 +287,12 @@ python3 test-substrate.py --stress-test \
     - [x] Keep the repo public for judges to review
   - [x] Readme describing the project in detail (this is essential to evaluating your project)
     - [x] Summary, overview, images of the demo, etc.
-    - [x] Great example:
-- [ ] **Video demonstration (max 3 min)**
-  - [ ] A short video to demonstrate the full functionality of your project
-  - See: [Demo Video]()
+- [x] **Video demonstration (max 3 min)**
+  - [x] A short video to demonstrate the full functionality of your project
 - [ ] **Presentation (Optional)**
   - [ ] Pitch deck
     - [ ] Introduce your team, why you built (motivation/problem), what you built (solution), demonstration video, and future roadmap of the project
     - [ ] This could be used later if selected as a finalist. You can update the deck before the demo day.
-  - See: [Pitch]()
 - [x] **Live website of the project for the public to test/demo(Optional)**
-  - See: [warpx](<[warpx.vercel.app](https://warpx.vercel.app/)>)
 - [x] **AI tools you have used**
 - [x] **Reference**
