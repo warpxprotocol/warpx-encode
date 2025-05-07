@@ -1,4 +1,4 @@
-# 🌌 warp(x) Frontend
+# warp(x) Frontend
 
 ## ✨ Introduction
 
@@ -73,11 +73,106 @@ This will generate the required custom types for the frontend to work with the P
 
 ---
 
-## 📸 Screenshots
+# Application
 
-![Orderbook View](./packages/frontend/screenshots/orderbook.jpg)
-![Extrinsic Toast](./packages/frontend/screenshots/extrinsicToast.png)
-![Create Pool](./packages/frontend/screenshots/createPool.jpg)
+### 🔌 Polkadot Node Integration
+
+- `WsProvider`
+
+  - [x] Connects to local or remote nodes (e.g. warpX testnet).
+
+- `ApiPromise`
+
+  - [x] Centralized factory function ensures a single shared instance across the appApiPromise is created and shared across the app.
+
+- `Zustand`
+
+  - [x] Manages and persists:
+    - [x] Polkadot API connection instance.
+    - [x] Current connected wallet account.
+    - [x] Pool info and metadata.
+    - [x] UI states: loading, success, error.
+
+- `React Query`
+
+  - [x] Fetches on-chain data (balances, orderbook, pools).
+  - [x] Handles caching, refetching, and state sync.
+
+- `Polkadot.js Extension Integration`
+
+  - [x] Uses `web3Enable`, `web3Accounts` for wallet access.
+  - [x] Handles transaction signing via `signAndSend`.
+
+- `Custom Hooks`
+
+  - [x] `useApi`, `useWallet`, `useSubmitTx`, `useOrderbook`.
+  - [x] Encapsulate logic for modular use in components.
+
+- `Connection Handling`
+  - [x] Shows real-time status (Connected / Connecting / Disconnected).
+  - [x] Graceful fallback for missing wallet or node issues.
+
+### 💧 Pool Management
+
+- `Pair Discovery`
+
+  - [x] Query existing pairs and display available pools
+  - [x] Handle routing to pair-specific pages (e.g. `/pools/DOT/USDC`)
+
+- `Create Pool`
+
+  - [x] Submits `create_pool` transaction with correct token IDs
+  - [x] Enforces minimum amount of liquidity when creating a new pool
+
+- `Add Liquidity Pool`
+
+  - [x] Submits `add_liquidity` transaction
+  - [x] Calculates proportional contribution based on current pool reserves
+
+- `AMM Info Fetching`
+  - [x] Fetches on-chain pool state (reserves, LP supply, fee rate)
+  - [x] Updates UI with live price, ratio, and APR
+  - [x] Uses React Query to sync with latest chain state
+- `verified_pool(optional)` :
+  [Link](https://www.coinbase.com/verified-pools)
+
+### 🧾 Order System
+
+- `Live Orderbook Fetching`
+
+  - [x] Fetches real-time bids and asks from on-chain storage
+  - [x] Uses React Query or subscription to sync order changes
+  - [x] Displays sorted orderbook (highest bid, lowest ask)
+
+- `Order State Management`
+
+  - [x] Normalizes raw storage into price/amount format
+  - [x] Aggregates orders by price level for display
+  - [x] Updates state efficiently on every block or event
+
+- `UI Display`
+  - [x] Renders bid/ask tables side by side
+  - [x] Shows depth bar or volume visualizations
+
+### 🔄 Trade Execution
+
+- `Limit Order`
+
+  - [x] Form input for price and amount
+  - [x] Validates balance and orderbook constraints
+  - [x] Submits `limit_order` transaction
+  - [x] Shows estimated fill, fees, and confirmation status
+
+- `Market Order`
+
+  - [x] Executes against best available price in the orderbook
+  - [x] Auto-calculates expected output based on slippage
+  - [x] Submits `market_order` transaction with real-time preview
+
+- `UX & Feedback`
+  - [x] Displays transaction status: pending, included, failed
+  - [x] Shows toast notifications or inline status
+  - [x] Resets form after confirmation
 
 
 ---
