@@ -202,10 +202,12 @@ _warp(x)_ will implement a sophisticated privacy-preserving architecture that fo
 
 # Original Repo
 
-- [warpx](https://github.com/warpxprotocol/warpx)
-- [warpx-frontend](https://github.com/warpxprotocol/warpx-frontend)
+- [warp(x)](https://github.com/warpxprotocol/warpx)
+- [warp(x)-frontend](https://github.com/warpxprotocol/warpx-frontend)
 
-# Bootstrapping
+# How to start
+
+### Boostrap
 
 To interact with `warp(x)-frontend`, `warp(x)`node should be bootstrapped. Following script is the helper script for the process.
 
@@ -219,7 +221,7 @@ python3 -m venv venv
 pip3 install substrate-interface && pip3 install coingecko
 ```
 
-- Run `warp(x)` with zombienet
+- Run `warp(x)` with [zombienet](https://github.com/paritytech/zombienet)
 - Run `warp(x)-frontend` with `yarn run dev`(**If error on connecting with chain, try change ws endpoint**)
 
 1. Fund `test` account & Create Tokens & Mint
@@ -274,6 +276,10 @@ python3 test-substrate.py --stress-test \
   --amount 1000000000 \
   --tick-range 10
 ```
+
+### Website
+
+- Go to [warp(x) website](warpx.vercel.app) and start trading
 
 # AI Tools
 
