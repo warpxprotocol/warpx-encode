@@ -279,7 +279,7 @@ python3 test-substrate.py --stress-test \
 
 ### Website
 
-- Go to [warp(x) website](warpx.vercel.app) and start trading
+- Go to [warp(x)](https://www.warpx.trade/) and start trading
 
 # AI Tools
 
